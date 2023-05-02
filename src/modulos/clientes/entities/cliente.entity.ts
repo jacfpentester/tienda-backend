@@ -51,10 +51,10 @@ export class Cliente {
     })
     Fecha_nacimiento: Date;
 
-    @Column('integer',{
+    @Column('text',{
         nullable: true
     })
-    Telefono: number;
+    Telefono: string;
 
 
 

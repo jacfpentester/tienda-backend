@@ -29,4 +29,7 @@ export class CreateUserDto {
     @IsString()
     @MinLength(1)
     FullName:string;
+
+    @IsString()
+    clienteID:string;
 }

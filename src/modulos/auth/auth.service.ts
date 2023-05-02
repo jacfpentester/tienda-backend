@@ -45,7 +45,7 @@ export class AuthService {
   async create(createUserDto: CreateUserDto) {
     try {
       console.log(createUserDto);
-      const { Password, ...userData } = createUserDto;
+      const { clienteID, Password, ...userData } = createUserDto;
       // const cliente = await this.clientesService.findOne(createUserDto.nif);
       // console.log(cliente);
       const user = this.userRepository.create({

@@ -15,12 +15,10 @@ export class JwtStrategy extends PassportStrategy( Strategy ) {
         private readonly userRepository: Repository<User>,
         configService: ConfigService 
     ){
-        //llamamos al constructor del padre
         super({
             secretOrKey: configService.get('JWT_SECRET'),            
             jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
-            //el token lo mandamos como un parametro 'token' del la seccion 'auth' de la request
-            // y  de tipo 'Bearer Token' 
+
         })
     }
 
@@ -31,12 +29,8 @@ export class JwtStrategy extends PassportStrategy( Strategy ) {
         if (!user )
             throw new UnauthorizedException('Token no valido');
         
-        if (!user.isActive ) //existe pero no activo
+        if (!user.isActive ) 
             throw new UnauthorizedException('usuario no activo');
-        
-        //si pasa validate --> el user se añade a la REQUEST 
-        //y el usuario estára disponible en todos los lados del proceso de esta petición
-        //usaremos DECORADORES personalizados para extraer el usuario REGISTRADO de la REQUEST
         return user;
     }
 

@@ -35,7 +35,7 @@ export class CreateClienteDto {
     @IsString()
     Fecha_nacimiento: string;
 
-    @IsNumber()
+    @IsString()
     @MaxLength(9)
-    Telefono: number;
+    Telefono: string;
 }
