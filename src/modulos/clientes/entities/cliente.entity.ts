@@ -57,7 +57,6 @@ export class Cliente {
     Telefono: string;
 
 
-
     //Relacion 1-1 Con User (Auth)
     @OneToOne(
         () => User,
@@ -69,8 +68,10 @@ export class Cliente {
     //Relacion uno a uno al Carrito
     @OneToOne(
         () => Carrito,
-        (carrito) => carrito.cliente,
-        { cascade:false }
+        (carrito) => carrito.cliente,{ 
+            eager:true,
+            onDelete:"CASCADE"    
+        }
     )
     carrito?: Carrito
 

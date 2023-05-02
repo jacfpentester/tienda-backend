@@ -19,7 +19,6 @@ export class AuthService {
 
   async login( loginUserDto: LoginUserDto ){
     try {
-      // buscamos el usuario del email
       const { Email, Password } = loginUserDto;
       const user = await this.userRepository.findOne({ 
         where: { Email },
@@ -29,7 +28,6 @@ export class AuthService {
       if ( !user ) 
         throw new UnauthorizedException ('Credenciales no válidas (email)');
 
-      //comparamos las contraseñas 
       if (!bcrypt.compareSync( Password, user.Password ))
         throw new UnauthorizedException('Credenciales no válidas (email)')
       
@@ -49,7 +47,7 @@ export class AuthService {
       // const cliente = await this.clientesService.findOne(createUserDto.nif);
       // console.log(cliente);
       const user = this.userRepository.create({
-        ...userData,
+        ...userData,clienteID,
         Password: bcrypt.hashSync( Password, 10 )
       });
       // user.cliente = cliente;

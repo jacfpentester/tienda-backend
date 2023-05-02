@@ -25,30 +25,21 @@ export class User {
 
     })
     Web?: string;
-
+    @Column('text',{
+        nullable: true
+    })
+    clienteID: string;
 
     //Relacion 11 con cliente
     @OneToOne(
         () => Cliente,
-        (cliente) => cliente.user
+        (cliente) => cliente.user,{ 
+        eager:true,
+        onDelete:"CASCADE"    
+    }
     )
     @JoinColumn()
     cliente?: Cliente
-
-    //Disparadores 
-    // @BeforeInsert()
-    // formatoGithub(){
-    //      if (!this.GitHub.includes('https://github.com/')){
-    //         this.GitHub = `https://github.com/${this.GitHub}`
-    //      }
-    //  }
-    
-    // @BeforeInsert()
-    // formatoWeb(){
-    //     if (!this.Web.includes('https://')){
-    //        this.Web = `https://${this.Web}`
-    //     }
-    // }
 
     @Column('text', {
         array: true,
