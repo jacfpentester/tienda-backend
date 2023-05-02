@@ -1,0 +1,40 @@
+version: '3'
+services:
+  dbpostgres:
+    image: postgres:14.3
+    restart: always
+    ports:
+      - ${DB_PORT}:5432
+    environment:
+      POSTGRES_USER: ${DB_USERNAME}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: ${DB_NAME}
+    container_name: dbeditorial
+    volumes:
+      - ./postgres:/var/lib/postgresql/data
+    networks: 
+       net_api_tienda:
+           ipv4_address: ${DB_HOST}
+  # pgAdmin:
+  #   image: dpage/pgadmin4
+  #   container_name: pgAdminPostgres
+  #   restart: always
+  #   environment:
+  #     PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL}
+  #     PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD}
+  #     PGADMIN_LISTEN_PORT: ${PGADMIN_LISTEN_PORT}
+  #   ports:
+  #     - 8080:80
+  #   volumes:
+  #     - /var/lib/pgadmin
+  #   depends_on:
+  #     - dbpostgres
+  #   networks: 
+  #      net_api_tienda:
+  #          ipv4_address: 172.200.30.23
+networks: 
+  net_api_tienda:
+    ipam: 
+      driver: default
+      config: 
+        - subnet: ${DB_NETWORK}

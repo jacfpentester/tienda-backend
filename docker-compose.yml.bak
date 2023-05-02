@@ -1,0 +1,171 @@
+version: '3.8'
+
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      DB_USER: ${DB_USER}
+      DB_PASS: ${DB_PASS}
+      DB_NAME: ${DB_NAME}
+      DB_HOST: ${DB_HOST}
+      DB_PORT: ${DB_PORT}
+      NODE_ENV: ${NODE_ENV}
+    env_file:
+      - .env
+    ports:
+      - 3000:3000
+    depends_on:
+      - db
+  db:
+    image: postgres:14-alpine
+    restart: always
+    environment:
+      DB_USER: ${DB_USER}
+      DB_PASS: ${DB_PASS}
+      POSTGRES_DB: ${DB_NAME}
+    ports:
+      - ${WWW_PORT}:5432
+    env_file:
+      - .env
+  nginx:
+    image: nginx:latest
+    ports:
+      - 80:80
+    depends_on:
+      - api
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+
+
+
+# version: "3.8"
+# services:
+#   dbcinenest:
+#     container_name: bdpostgre
+#     image: postgres:14.3
+#     restart: always
+#     ports:
+#       - ${DB_PORT}:5432
+#     environment:
+#       POSTGRES_PASSWORD: ${DB_PASS}
+#       POSTGRES_DB: ${DB_NAME}
+#       POSTGRES_USER: ${DB_USER}
+#     volumes:
+#       - ./postgres:/var/lib/postgresql/data
+  
+#   webcinenest:
+#     container_name: apiCine
+#     image: apinestincidencias
+#     build:
+#       context: ./
+#       dockerfile: ./Dockerfile
+#       args:
+#         - PROYECTO=${PROYECTO}
+#         - DB_HOST=${DB_HOST}
+#         - DB_NAME=${DB_NAME}
+#         - DB_USERNAME=${DB_USER}
+#         - DB_PASSWORD=${DB_PASS}
+#         - DB_PORT=${DB_PORT}
+#         - NEST_PORT=${NEST_PORT}
+#     env_file:
+#        - ./.env
+#     ports:
+#       - ${NEST_PORT}:80
+#     volumes:
+#       - ./web:/var/www/html
+#       - ./logs:/var/logs
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# version: '3.8'
+# services:
+#   api:
+#     build: .
+#     environment:
+#       DB_USER: ${DB_USER}
+#       DB_PASS: ${DB_PASS}
+#       DB_NAME: ${DB_NAME}
+#       DB_HOST: ${DB_HOST}
+#       DB_PORT: ${DB_PORT}
+#       NODE_ENV: ${NODE_ENV}
+#     env_file:
+#       - .env
+#     ports:
+#       - 3000:3000
+#     depends_on:
+#       - db
+#   db:
+#     image: postgres:14-alpine
+#     restart: always
+#     environment:
+#       DB_USER: ${DB_USER}
+#       DB_PASS: ${DB_PASS}
+#       POSTGRES_DB: ${DB_NAME}
+#     ports:
+#       - ${WWW_PORT}:5432
+#     env_file:
+#       - .env
+#   nginx:
+#     image: nginx:latest
+#     ports:
+#       - 80:80
+#     depends_on:
+#       - api
+#     volumes:
+#       - ./nginx.conf:/etc/nginx/nginx.conf
+
+
+
+
+# version: '3.8'
+# services:
+#   api:
+#     build: .
+#     environment:
+#       POSTGRES_USER: miguel
+#       POSTGRES_PASSWORD: usuario
+#       POSTGRES_DB: bdapicine
+#       POSTGRES_HOST: db
+#       POSTGRES_PORT: 5432
+#       NODE_ENV: production
+#     ports:
+#       - 3000:3000
+#     depends_on:
+#       - db
+#   db:
+#     image: postgres:14-alpine
+#     restart: always
+#     environment:
+#       POSTGRES_USER: miguel
+#       POSTGRES_PASSWORD: usuario
+#       POSTGRES_DB: bdapicine
+#     ports:
+#       - 5442:5432
+#   nginx:
+#     image: nginx:latest
+#     ports:
+#       - 80:80
+#     depends_on:
+#       - api
+#     volumes:
+#       - ./nginx.conf:/etc/nginx/nginx.conf
