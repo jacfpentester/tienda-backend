@@ -20,13 +20,13 @@ export class CarritosService {
   async create(createCarritoDto: CreateCarritoDto) {
 
     try {
-      const { ProductoID, ClienteID, ...campos } = createCarritoDto;
+      const { productoID, clienteID, ...campos } = createCarritoDto;
       // console.log({...campos});
-      const producto = this.productosService.findOne(ProductoID);
-      const cliente = this.clientesService.findOne(ClienteID);
+      //const producto = this.productosService.findOne(ProductoID);
+      //const cliente = this.clientesService.findOne(ClienteID);
       const carrito = this.carritoRepository.create({ ...campos });
-      carrito.productos = await this.productosService.findOne(ProductoID);
-      carrito.cliente = await this.clientesService.findOne(ClienteID);
+      carrito.productos = await this.productosService.findOne(productoID);
+      carrito.cliente = await this.clientesService.findOne(clienteID);
       // //se lanza la petición sl SGBD (postgres). Esperar (x seg)
       await this.carritoRepository.save(carrito)
       return carrito

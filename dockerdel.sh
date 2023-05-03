@@ -4,6 +4,6 @@ docker rm $(docker ps -a -q)
 if [ -d "postgres" ]; then
 sudo rm -R postgres
 else
-docker-compose -f docker-compose.yml up -d
+docker-compose -f postgres.yml up -d
 fi
 exit

@@ -25,8 +25,10 @@ export class User {
 
     })
     Web?: string;
+
     @Column('text',{
-        nullable: true
+        nullable: true,
+        unique:true
     })
     clienteID: string;
 

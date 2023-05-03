@@ -33,7 +33,9 @@ export class Producto {
     @ManyToOne(
         () => Categoria,
         (categoria) => categoria.producto,
-        { cascade: false }
+        { cascade: false,
+            nullable: true
+        }
     )
 
     categoria?: Categoria
@@ -43,7 +45,7 @@ export class Producto {
         () => Proveedor,
         (proveedor) => proveedor.producto,
         { cascade: false,
-          nullable: false
+          nullable: true
         }
     )
 
@@ -54,7 +56,7 @@ export class Producto {
         () => Carrito,
         (carrito) => carrito.productos,
         { cascade: false,
-          nullable: false }
+          nullable: true }
     )
 
     carrito?:Carrito[];

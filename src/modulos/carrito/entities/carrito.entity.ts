@@ -8,7 +8,8 @@ export class Carrito {
     ID: string;
 
     @Column('date',{
-        unique: true
+        unique: false,
+        nullable: false
     })
     Fecha_compra: Date;
 
@@ -16,14 +17,19 @@ export class Carrito {
     @ManyToOne(
         () => Producto,
         (producto) => producto.carrito,
-        {cascade: true}
+        {cascade: true,
+            nullable: false
+        }
     )
     productos?: Producto
 
     //Relacion 11 a Clientes
     @OneToOne(
         () => Cliente,
-        (cliente) => cliente.carrito
+        (cliente) => cliente.carrito,
+        {cascade: true,
+            nullable: false
+        }
     )
     @JoinColumn()
     cliente?: Cliente

@@ -3,10 +3,10 @@ import { IsString } from "class-validator";
 export class CreateCarritoDto {
 
     @IsString()
-    ClienteID: string;
+    clienteID: string;
     
     @IsString()
-    ProductoID: string;
+    productoID: string;
 
     @IsString()
     Fecha_compra: string;
