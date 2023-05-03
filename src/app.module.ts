@@ -9,7 +9,7 @@ import { ProductosModule } from './modulos/productos/productos.module';
 import { AuthModule } from './modulos/auth/auth.module';
 import { ClientesModule } from './modulos/clientes/clientes.module';
 import { ProveedoresModule } from './modulos/proveedores/proveedores.module';
-//import { SeedModule } from './modulos/seed/seed.module';
+import { SeedModule } from './modulos/seed/seed.module';
 
 @Module({
   imports: [ConfigModule.forRoot(), TypeOrmModule.forRoot({
@@ -23,7 +23,7 @@ import { ProveedoresModule } from './modulos/proveedores/proveedores.module';
     database: process.env.DB_NAME,
     autoLoadEntities: true,
     synchronize: true
-  }), ClientesModule, ProductosModule, ProveedoresModule, CategoriasModule, CarritosModule, AuthModule
+  }), ClientesModule, ProductosModule, ProveedoresModule, CategoriasModule, CarritosModule, AuthModule, SeedModule
   ],
   controllers: [AppController],
   providers: [AppService],

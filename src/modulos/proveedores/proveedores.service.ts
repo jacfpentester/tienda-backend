@@ -38,7 +38,7 @@ export class ProveedoresService {
       return await query
         .delete()
         .where({})
-        .execute()
+        .execute();
 
     } catch (error) {
       this.handleDBErrors(error)

@@ -1,0 +1,22 @@
+[
+	{
+		"ID" : "1",
+		"Nombre" : "MONITORES"
+	},
+	{
+		"ID" : "2",
+		"Nombre" : "PLACAS BASE"
+	},
+	{
+		"ID" : "3",
+		"Nombre" : "MEMORIAS"
+	},
+	{
+		"ID" : "4",
+		"Nombre" : "DISCOS DUROS"
+	},
+	{
+		"ID" : "5",
+		"Nombre" : "TECLADOS"
+	}
+]

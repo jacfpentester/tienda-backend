@@ -38,13 +38,13 @@ export class CarritosService {
 
   }
 
-  async deleteAllCarrito() {
+  async deleteAllCarritos() {
     const query = this.carritoRepository.createQueryBuilder('carrito');
     try {
       return await query
         .delete()
         .where({})
-        .execute()
+        .execute();
 
     } catch (error) {
       this.handleDBErrors(error)

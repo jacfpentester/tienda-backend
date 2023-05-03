@@ -1,0 +1,47 @@
+[
+	{
+		"ID" : "1",
+		"Nombre" : "Informatica Global",
+		"NIF" : "12134356L",
+		"Direccion" : "Calle La marina, num 2",
+		"Provincia" : "Granada",
+		"CP" : "43456",
+		"Telefono" : "12134356"
+	},
+	{
+		"ID" : "2",
+		"Nombre" : "NovaTech",
+		"NIF" : "89254703M",
+		"Direccion" : "Calle Mojacar, num 3",
+		"Provincia" : "Almeria",
+		"CP" : "04567",
+		"Telefono" : "950967867"
+	},
+	{
+		"ID" : "3",
+		"Nombre" : "Unlimited Computer",
+		"NIF" : "23567487O",
+		"Direccion" : "Poligono La Pera, local 43",
+		"Provincia" : "Almeria",
+		"CP" : "04534",
+		"Telefono" : "950238765"
+	},
+	{
+		"ID" : "4",
+		"Nombre" : "Distribuidora IT",
+		"NIF" : "27667487O",
+		"Direccion" : "Calle Madrid, local 4",
+		"Provincia" : "Zaragoza",
+		"CP" : "34768",
+		"Telefono" : "953256578"
+	},
+	{
+		"ID" : "5",
+		"Nombre" : "TotalComputer",
+		"NIF" : "34567328R",
+		"Direccion" : "Calle El Real, Num 32",
+		"Provincia" : "Sevilla",
+		"CP" : "43268",
+		"Telefono" : "958254778"
+	}
+]

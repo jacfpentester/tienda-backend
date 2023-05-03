@@ -1,0 +1,62 @@
+[
+	{
+		"ID" : "1",
+		"Nombre" : "Jose",
+		"Apellido1" : "Garcia",
+		"Apellido2" : "Fernandez",
+		"DNI" : "12134356L",
+		"Direccion" : "Calle La marina, num 2",
+		"Provincia" : "Granada",
+		"CP" : "43456",
+		"Fecha_nacimiento" : "1989-01-02",
+		"Telefono" : "12134356"
+	},
+	{
+		"ID" : "2",
+		"Nombre" : "Manuel",
+		"Apellido1" : "Garcia",
+		"Apellido2" : "Flores",
+		"DNI" : "12131466L",
+		"Direccion" : "Calle La marina, num 5",
+		"Provincia" : "Granada",
+		"CP" : "43456",
+		"Fecha_nacimiento" : "1980-05-02",
+		"Telefono" : "12134106"
+	},
+	{
+		"ID" : "3",
+		"Nombre" : "Maria",
+		"Apellido1" : "Zamora",
+		"Apellido2" : "Flores",
+		"DNI" : "45131466N",
+		"Direccion" : "Calle Mojacar, num 5",
+		"Provincia" : "Almeria",
+		"CP" : "04582",
+		"Fecha_nacimiento" : "2001-10-04",
+		"Telefono" : "950876785"
+	},
+	{
+		"ID" : "4",
+		"Nombre" : "Angela",
+		"Apellido1" : "Cervantes",
+		"Apellido2" : "Bellido",
+		"DNI" : "65139466N",
+		"Direccion" : "Calle Correo, num 1",
+		"Provincia" : "Almeria",
+		"CP" : "04581",
+		"Fecha_nacimiento" : "2002-11-04",
+		"Telefono" : "950132785"
+	},
+	{
+		"ID" : "5",
+		"Nombre" : "Pedro",
+		"Apellido1" : "Davila",
+		"Apellido2" : "Fernandez",
+		"DNI" : "42139466N",
+		"Direccion" : "Plaza la paz, num 1",
+		"Provincia" : "Madrid",
+		"CP" : "45814",
+		"Fecha_nacimiento" : "1979-11-01",
+		"Telefono" : "910132785"
+	}
+]

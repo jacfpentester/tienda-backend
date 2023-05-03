@@ -1,0 +1,47 @@
+[
+	{
+		"ID" : "1",
+		"Nombre" : "MONITOR ASUS EDS24",
+		"Descripcion" : "Monitor de 24 pulgadas y refresco de 100Hz",
+		"Precio" : 551.76,
+		"Imagen" : "\/1\/1.jpg",
+		"CategoriaID" : "1",
+		"ProveedorID" : "1"
+	},
+	{
+		"ID" : "2",
+		"Nombre" : "MONITOR DELL HQ32",
+		"Descripcion" : "Monitor de 32 pulgadas y refresco de 150Hz",
+		"Precio" : 1761.76,
+		"Imagen" : "\/2\/1.jpg",
+		"categoriaID" : "1",
+		"ProveedorID" : "1"
+	},
+	{
+		"ID" : "3",
+		"Nombre" : "SEAGATE SSD500",
+		"Descripcion" : "Disco Duro ssd de 500GB",
+		"Precio" : 67.75999999999999,
+		"Imagen" : "\/3\/1.jpg",
+		"categoriaID" : "4",
+		"ProveedorID" : "3"
+	},
+	{
+		"ID" : "4",
+		"Nombre" : "SEAGATE SSD1000",
+		"Descripcion" : "Disco Duro ssd de 1000GB",
+		"Precio" : 188.76,
+		"Imagen" : "\/4\/1.jpg",
+		"categoriaID" : "4",
+		"ProveedorID" : "2"
+	},
+	{
+		"ID" : "5",
+		"Nombre" : "LOGITECH G546",
+		"Descripcion" : "Teclaso mecanico y de cable",
+		"Precio" : 128.26,
+		"Imagen" : "\/5\/1.jpg",
+		"categoriaID" : "5",
+		"ProveedorID" : "5"
+	}
+]

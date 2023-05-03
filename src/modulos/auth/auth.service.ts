@@ -44,15 +44,11 @@ export class AuthService {
     try {
       console.log(createUserDto);
       const { clienteID, Password, ...userData } = createUserDto;
-      // const cliente = await this.clientesService.findOne(createUserDto.nif);
-      // console.log(cliente);
       const user = this.userRepository.create({
         ...userData,clienteID,
         Password: bcrypt.hashSync( Password, 10 )
       });
-      // user.cliente = cliente;
       await this.userRepository.save(user);
-      // delete user.password;
 
       return {
         user: { ...user }, 
@@ -82,7 +78,7 @@ export class AuthService {
       return await query
               .delete()
               .where({})
-              .execute()
+              .execute();
     }catch(error){
       this.handleDBErrors( error )
     }

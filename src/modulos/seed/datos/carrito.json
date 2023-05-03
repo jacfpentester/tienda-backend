@@ -1,0 +1,32 @@
+[
+	{
+		"ID" : "ae95b068-8d40-4680-8864-bc1eb494ed16",
+		"Fecha_compra" : "2020-01-03",
+		"productoID" : "1",
+		"clienteID" : "4"
+	},
+	{
+		"ID" : "7ee8a6fb-09d9-4d70-839c-fbe7053afbf6",
+		"Fecha_compra" : "2022-04-03",
+		"productoID" : "4",
+		"clienteID" : "1"
+	},
+	{
+		"ID" : "f4c42ced-19f7-46e2-827a-18d4902b6dd0",
+		"Fecha_compra" : "2022-05-03",
+		"productoID" : "5",
+		"clienteID" : "5"
+	},
+	{
+		"ID" : "0b7e03c1-cbaa-4e8b-af30-5d88d92b1786",
+		"Fecha_compra" : "2000-12-03",
+		"productoID" : "2",
+		"clienteID" : "3"
+	},
+	{
+		"ID" : "947f5fe2-a425-4a56-af8c-aec7902c6f2a",
+		"Fecha_compra" : "2000-02-03",
+		"productoID" : "2",
+		"clienteID" : "2"
+	}
+]

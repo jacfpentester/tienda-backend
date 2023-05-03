@@ -21,12 +21,9 @@ export class ProductosService {
 
     try {
       const { CategoriaID, ProveedorID, ...campos } = createProductoDto;
-      const categoria = this.categoriaService.findOne(CategoriaID);
-      const proveedor = this.proveedoresService.findOne(ProveedorID);
       const productos = this.productosRepository.create({ ...campos });
       productos.categoria = await this.categoriaService.findOne(CategoriaID);
       productos.proveedores = await this.proveedoresService.findOne(ProveedorID);
-      // //se lanza la petición sl SGBD (postgres). Esperar (x seg)
       await this.productosRepository.save(productos)
       return productos
     } catch (error) {
@@ -34,13 +31,13 @@ export class ProductosService {
     }
   }
 
-  async deleteAllProductoss() {
+  async deleteAllProductos() {
     const query = this.productosRepository.createQueryBuilder('productos');
     try {
       return await query
         .delete()
         .where({})
-        .execute()
+        .execute();
 
     } catch (error) {
       this.handleDBErrors(error)

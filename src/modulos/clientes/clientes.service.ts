@@ -31,7 +31,7 @@ export class ClientesService {
       return await query
         .delete()
         .where({})
-        .execute()
+        .execute();
 
     } catch (error) {
       this.handleDBErrors(error)
