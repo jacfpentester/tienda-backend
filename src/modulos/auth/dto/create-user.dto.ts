@@ -30,6 +30,8 @@ export class CreateUserDto {
     @MinLength(1)
     FullName:string;
 
-    @IsString()
-    clienteID:string;
+//     @IsOptional()
+//     @IsString()
+//     clienteID:string;
+// 
 }

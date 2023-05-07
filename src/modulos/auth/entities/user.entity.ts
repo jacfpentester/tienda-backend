@@ -26,31 +26,32 @@ export class User {
     })
     Web?: string;
 
-    @Column('text',{
-        nullable: true,
-        unique:true
-    })
-    clienteID: string;
+    // @Column('text',{
+    //     nullable: true,
+    //     unique:true
+    // })
+    // clienteID: string;
 
     //Relacion 11 con cliente
-    @OneToOne(
-        () => Cliente,
-        (cliente) => cliente.user,{ 
-        eager:true,
-        onDelete:"CASCADE"    
-    }
-    )
-    @JoinColumn()
-    cliente?: Cliente
+    // @OneToOne(
+    //     () => Cliente,
+    //     (cliente) => cliente.user,{ 
+    //     eager:true,
+    //     onDelete:"CASCADE"    
+    // }
+    // )
+    
 
     @Column('text', {
         array: true,
         default: ['user']
     })
-    roles: string[];
+    Roles: string[];
 
     @Column('bool', { default: true })
-    isActive: boolean;
+    IsActive: boolean;
 
+    // @JoinColumn()
+    // cliente?: Cliente
 
 }

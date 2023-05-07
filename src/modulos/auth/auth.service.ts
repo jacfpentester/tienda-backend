@@ -5,8 +5,7 @@ import { Repository } from 'typeorm';
 import * as bcrypt from 'bcrypt';
 import { JwtPayload } from './interfaces/jwt-payload.interface';
 import { JwtService } from '@nestjs/jwt';
-import { LoginUserDto } from './dto/login.dto.ts';
-import { CreateUserDto } from './dto/create-user.dto';
+import { LoginUserDto, CreateUserDto } from './dto/index';
 import { ClientesService } from '../clientes/clientes.service';
 @Injectable()
 export class AuthService {
@@ -22,7 +21,7 @@ export class AuthService {
       const { Email, Password } = loginUserDto;
       const user = await this.userRepository.findOne({ 
         where: { Email },
-        select: { Email: true, Password: true, roles: true, FullName: true }
+        select: { Email: true, Password: true, Roles:true, FullName: true}
        });
 
       if ( !user ) 
@@ -43,9 +42,9 @@ export class AuthService {
   async create(createUserDto: CreateUserDto) {
     try {
       console.log(createUserDto);
-      const { clienteID, Password, ...userData } = createUserDto;
+      const { Password, ...userData } = createUserDto;
       const user = this.userRepository.create({
-        ...userData,clienteID,
+        ...userData,
         Password: bcrypt.hashSync( Password, 10 )
       });
       await this.userRepository.save(user);
@@ -64,7 +63,7 @@ export class AuthService {
     if (error.code === '23505')
       throw new BadRequestException(error.detail)
     
-    throw new InternalServerErrorException('Please Check Server Error ...')
+    throw new InternalServerErrorException(error.detail)
   }
 
   private getJwtToken( payload: JwtPayload){
