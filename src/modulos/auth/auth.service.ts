@@ -21,7 +21,7 @@ export class AuthService {
       const { Email, Password } = loginUserDto;
       const user = await this.userRepository.findOne({ 
         where: { Email },
-        select: { Email: true, Password: true, Roles:true, FullName: true}
+        select: { Email: true, Password: true, FullName: true}
        });
 
       if ( !user ) 
@@ -41,7 +41,6 @@ export class AuthService {
   }
   async create(createUserDto: CreateUserDto) {
     try {
-      console.log(createUserDto);
       const { Password, ...userData } = createUserDto;
       const user = this.userRepository.create({
         ...userData,

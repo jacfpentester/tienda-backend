@@ -15,8 +15,7 @@ export class User {
     FullName: string;
 
     @Column('text', { 
-        select: false,
-        nullable: false
+        select: false
     })
     Password: string;
 
@@ -33,14 +32,11 @@ export class User {
     // clienteID: string;
 
     //Relacion 11 con cliente
-    // @OneToOne(
-    //     () => Cliente,
-    //     (cliente) => cliente.user,{ 
-    //     eager:true,
-    //     onDelete:"CASCADE"    
-    // }
-    // )
-    
+    @OneToOne(
+        () => Cliente,
+        (cliente) => cliente.user )
+    @JoinColumn()
+    cliente?: Cliente
 
     @Column('text', {
         array: true,
@@ -51,7 +47,6 @@ export class User {
     @Column('bool', { default: true })
     IsActive: boolean;
 
-    // @JoinColumn()
-    // cliente?: Cliente
+   
 
 }

@@ -58,12 +58,12 @@ export class Cliente {
 
 
     //Relacion 1-1 Con User (Auth)
-    // @OneToOne(
-    //     () => User,
-    //     (user) => user.cliente,
-    //     { cascade:false }
-    // )
-    // user?: User
+    @OneToOne(
+        () => User,
+        (user) => user.cliente,
+        { cascade:false }
+    )
+    user?: User
 
     //Relacion uno a uno al Carrito
     @OneToOne(
