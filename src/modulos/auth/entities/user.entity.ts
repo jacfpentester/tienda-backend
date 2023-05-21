@@ -7,11 +7,14 @@ export class User {
     ID: string;
 
     @Column('text',{
-        nullable: true
+        nullable: true,
+        unique: true
     })
     Email: string;
 
-    @Column()
+    @Column('text',{
+        nullable: true
+    })
     FullName: string;
 
     @Column('text', { 
@@ -25,13 +28,7 @@ export class User {
     })
     Web?: string;
 
-    // @Column('text',{
-    //     nullable: true,
-    //     unique:true
-    // })
-    // clienteID: string;
-
-    //Relacion 11 con cliente
+    //Relacion 1 a 1 con cliente
     @OneToOne(
         () => Cliente,
         (cliente) => cliente.user )
@@ -40,7 +37,7 @@ export class User {
 
     @Column('text', {
         array: true,
-        default: ['user']
+        default: ['client']
     })
     Roles: string[];
 

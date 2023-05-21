@@ -25,9 +25,9 @@
 		"FullName" : "maria",
 		"Password" : "fN6UhBQRithZW5S",
 		"Web" : "[\"Web\"]",
-		"clienteID" : "3",
-		"roles" : "{user}",
-		"isActive" : true
+		"ClienteID" : "3",
+		"Roles" : "{user}",
+		"IsActive" : true
 	},
 	{
 		"ID" : "cb196d44-c461-4120-bc1f-5e41ff18801e",
@@ -35,9 +35,9 @@
 		"FullName" : "angela",
 		"Password" : "fN6UhBQRithZW5S",
 		"Web" : "[\"Web\"]",
-		"clienteID" : "4",
-		"roles" : "{user}",
-		"isActive" : true
+		"ClienteID" : "4",
+		"Roles" : "{user}",
+		"IsActive" : true
 	},
 	{
 		"ID" : "56736c52-9bf5-4ff1-ae9e-1b0225955197",
@@ -45,8 +45,8 @@
 		"FullName" : "pedro",
 		"Password" : "fN6UhBQRithZW5S",
 		"Web" : "[\"Web\"]",
-		"clienteID" : "5",
-		"roles" : "{user}",
-		"isActive" : true
+		"ClienteID" : "5",
+		"Roles" : "{user}",
+		"IsActive" : true
 	}
 ]

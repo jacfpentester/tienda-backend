@@ -12,7 +12,7 @@
 		"ID" : "2",
 		"Nombre" : "MONITOR DELL HQ32",
 		"Descripcion" : "Monitor de 32 pulgadas y refresco de 150Hz",
-		"Precio" : 1761.76,
+		"Precio" : 761.76,
 		"Imagen" : "\/2\/1.jpg",
 		"categoriaID" : "1",
 		"ProveedorID" : "1"
@@ -21,7 +21,7 @@
 		"ID" : "3",
 		"Nombre" : "SEAGATE SSD500",
 		"Descripcion" : "Disco Duro ssd de 500GB",
-		"Precio" : 67.75999999999999,
+		"Precio" : 67.75,
 		"Imagen" : "\/3\/1.jpg",
 		"categoriaID" : "4",
 		"ProveedorID" : "3"
