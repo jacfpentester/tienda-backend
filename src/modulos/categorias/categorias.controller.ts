@@ -19,7 +19,7 @@ export class CategoriasController {
 
   @Patch(':id')
   update(@Param('id') id: string, @Body() updateCategoriaDto: UpdateCategoriaDto) {
-    return this.categoriasService.update(+id, updateCategoriaDto);
+    return this.categoriasService.update(id, updateCategoriaDto);
   }
 
   @Delete(':id')

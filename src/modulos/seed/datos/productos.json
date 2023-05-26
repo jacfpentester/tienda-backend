@@ -14,7 +14,7 @@
 		"Descripcion" : "Monitor de 32 pulgadas y refresco de 150Hz",
 		"Precio" : 761.76,
 		"Imagen" : "\/2\/1.jpg",
-		"categoriaID" : "1",
+		"CategoriaID" : "1",
 		"ProveedorID" : "1"
 	},
 	{
@@ -23,7 +23,7 @@
 		"Descripcion" : "Disco Duro ssd de 500GB",
 		"Precio" : 67.75,
 		"Imagen" : "\/3\/1.jpg",
-		"categoriaID" : "4",
+		"CategoriaID" : "4",
 		"ProveedorID" : "3"
 	},
 	{
@@ -32,7 +32,7 @@
 		"Descripcion" : "Disco Duro ssd de 1000GB",
 		"Precio" : 188.76,
 		"Imagen" : "\/4\/1.jpg",
-		"categoriaID" : "4",
+		"CategoriaID" : "4",
 		"ProveedorID" : "2"
 	},
 	{
@@ -41,7 +41,7 @@
 		"Descripcion" : "Teclaso mecanico y de cable",
 		"Precio" : 128.26,
 		"Imagen" : "\/5\/1.jpg",
-		"categoriaID" : "5",
+		"CategoriaID" : "5",
 		"ProveedorID" : "5"
 	}
 ]

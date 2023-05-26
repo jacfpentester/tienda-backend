@@ -14,10 +14,10 @@ export class Categoria {
     // Relacion 1-N Con Productos
     @OneToMany(
         () => Producto,
-        (Producto) => Producto.categoria,
-        { cascade: false }
+        (producto) => producto.categoria,
+        { cascade: true }
     )
-    producto?: Producto[];
+    producto?: Producto;
 
     // Pasamos a Mayusculas Nombre
     @BeforeInsert()

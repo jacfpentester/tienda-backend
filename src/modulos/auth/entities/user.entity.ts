@@ -1,5 +1,5 @@
 import { Cliente} from "../../clientes/entities/cliente.entity";
-import { BeforeInsert, Column, Entity, JoinColumn, OneToOne, PrimaryColumn, PrimaryGeneratedColumn } from "typeorm";
+import { BeforeInsert, Column, Entity, JoinColumn, OneToOne, PrimaryGeneratedColumn } from "typeorm";
 @Entity('users')
 
 export class User {
@@ -24,7 +24,6 @@ export class User {
 
     @Column('text',{
         default: ['Web']
-
     })
     Web?: string;
 
@@ -36,12 +35,13 @@ export class User {
     cliente?: Cliente
 
     @Column('text', {
-        array: true,
         default: ['client']
     })
     Roles: string[];
 
-    @Column('bool', { default: true })
+    @Column('bool', { 
+        default: true 
+    })
     IsActive: boolean;
 
    

@@ -23,7 +23,7 @@ export class CreateProductoDto {
     Imagen: string;
 
     @IsString()
-    CategoriaID?: string;
+    CategoriaID: string;
 
     @IsString()
     ProveedorID: string;

@@ -16,9 +16,10 @@ export class CategoriasService {
 
   async create(createCategoriaDto: CreateCategoriaDto) {
     try {
+      const { ID, ...campos } = createCategoriaDto;
       const categoria = this.categoriaRepository.create(createCategoriaDto);
-      await this.categoriaRepository.save(categoria);
-      return categoria;
+      await this.categoriaRepository.save(categoria)
+      return categoria
 
     } catch (error) {
       console.log(error);
@@ -41,9 +42,29 @@ export class CategoriasService {
     });
   }
 
-  update(id: number, updateCategoriaDto: UpdateCategoriaDto) {
-    return `This action updates a #${id} categoria`;
+  // update(id: number, updateCategoriaDto: UpdateCategoriaDto) {
+  //   return `This action updates a #${id} categoria`;
+  // }
+
+  async update(id: string, updateCategoriaDto: UpdateCategoriaDto): Promise<Categoria> {
+    const categoria = await this.categoriaRepository.findOneBy({ ID: id });
+
+    if (!categoria) {
+      // Manejo del error si la categoria no existe
+      throw new Error('La categoria no existe');
+    }
+
+    // Actualizar los campos necesarios de la categoria
+    if (updateCategoriaDto.Nombre) {
+      categoria.Nombre = updateCategoriaDto.Nombre;
+    }
+
+    // Guardar los cambios
+    const updatedCategoria = await this.categoriaRepository.save(categoria);
+
+    return updatedCategoria;
   }
+
 
   remove(id: number) {
     return `This action removes a #${id} categoria`;
