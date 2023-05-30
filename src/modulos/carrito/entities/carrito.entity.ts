@@ -17,21 +17,17 @@ export class Carrito {
     @ManyToOne(
         () => Producto,
         (producto) => producto.carrito,
-        {cascade: true,
-            nullable: false
-        }
+        { cascade: true, eager: true }
     )
-    productos?: Producto
+    productos: Producto
 
     //Relacion 11 a Clientes
     @OneToOne(
         () => Cliente,
         (cliente) => cliente.carrito,
-        {cascade: true,
-            nullable: false
-        }
+        { onDelete: 'CASCADE' }
     )
     @JoinColumn()
-    cliente?: Cliente
+    cliente: Cliente
     
 }

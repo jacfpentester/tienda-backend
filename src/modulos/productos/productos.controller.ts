@@ -24,7 +24,7 @@ export class ProductosController {
 
   @Patch(':id')
   update(@Param('id') id: string, @Body() updateProductoDto: UpdateProductoDto) {
-    return this.productosService.update(+id, updateProductoDto);
+    return this.productosService.update(id, updateProductoDto);
   }
 
   @Delete(':id')

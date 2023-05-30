@@ -1,9 +1,9 @@
 import { Cliente} from "../../clientes/entities/cliente.entity";
-import { BeforeInsert, Column, Entity, JoinColumn, OneToOne, PrimaryGeneratedColumn } from "typeorm";
+import { BeforeInsert, Column, Entity, JoinColumn, OneToOne, PrimaryColumn, PrimaryGeneratedColumn } from "typeorm";
 @Entity('users')
 
 export class User {
-    @PrimaryGeneratedColumn("uuid")
+    @PrimaryGeneratedColumn('increment')
     ID: string;
 
     @Column('text',{
@@ -16,6 +16,12 @@ export class User {
         nullable: true
     })
     FullName: string;
+
+    @Column('text',{
+        nullable: false
+    })
+    clienteID: string;
+
 
     @Column('text', { 
         select: false
@@ -30,16 +36,18 @@ export class User {
     //Relacion 1 a 1 con cliente
     @OneToOne(
         () => Cliente,
-        (cliente) => cliente.user )
+        (cliente) => cliente.user,
+        { cascade: true, eager: true }
+    )
     @JoinColumn()
-    cliente?: Cliente
+    cliente: Cliente;
 
     @Column('text', {
         default: ['client']
     })
     Roles: string[];
 
-    @Column('bool', { 
+    @Column('boolean', { 
         default: true 
     })
     IsActive: boolean;

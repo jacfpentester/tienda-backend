@@ -1,9 +1,9 @@
 import { Carrito } from "../../carrito/entities/carrito.entity";
 import { Categoria} from "../../categorias/entities/categoria.entity";
 import { Proveedor } from "../../proveedores/entities/proveedor.entity";
-import { BeforeInsert, Column, Entity, ManyToOne, OneToMany, PrimaryColumn } from "typeorm";
+import { BeforeInsert, Column, Entity, JoinColumn, ManyToOne, OneToMany, PrimaryColumn } from "typeorm";
 
-@Entity('productos')
+@Entity()
 
 export class Producto {
     @PrimaryColumn()
@@ -30,20 +30,14 @@ export class Producto {
     Imagen: string;
 
     // Relacion N1 a categoria
-    @ManyToOne(
-        () => Categoria,
-        (categoria) => categoria.producto,
-        { cascade: false,
-            nullable: true
-        }
-    )
-
-    categoria?: Categoria
+    @ManyToOne(() => Categoria, { cascade: true })
+    @JoinColumn({ name: 'CategoriaID' })
+    categoria: Categoria;
 
     // Relacion N1 a proveedor
     @ManyToOne(
         () => Proveedor,
-        (proveedor) => proveedor.producto,
+        (proveedor) => proveedor.productos,
         { cascade: false,
           nullable: true
         }

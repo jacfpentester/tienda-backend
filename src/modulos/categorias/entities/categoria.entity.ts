@@ -14,10 +14,8 @@ export class Categoria {
     // Relacion 1-N Con Productos
     @OneToMany(
         () => Producto,
-        (producto) => producto.categoria,
-        { cascade: true }
-    )
-    producto?: Producto;
+        (productos) => productos.categoria, {onDelete: 'CASCADE' })
+    productos: Producto[];
 
     // Pasamos a Mayusculas Nombre
     @BeforeInsert()

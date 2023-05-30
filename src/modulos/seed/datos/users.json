@@ -1,6 +1,6 @@
 [
 	{
-		"ID" : "6e804fec-6dd9-4507-81cb-927be5134a22",
+		"ID" : "1",
 		"Email" : "Jose@gmail.com",
 		"FullName" : "Jose Garcia",
 		"Password" : "fN6UhBQRithZW5S",
@@ -10,7 +10,7 @@
 		"isActive" : true
 	},
 	{
-		"ID" : "4cbef964-2329-4388-bbb1-8a15db84e8fe",
+		"ID" : "2",
 		"Email" : "manuel@gmail.com",
 		"FullName" : "manuel",
 		"Password" : "fN6UhBQRithZW5S",
@@ -20,32 +20,32 @@
 		"isActive" : true
 	},
 	{
-		"ID" : "19e4f8ca-1765-4808-b96f-e90f9aa118b7",
+		"ID" : "3",
 		"Email" : "maria@gmail.com",
 		"FullName" : "maria",
 		"Password" : "fN6UhBQRithZW5S",
 		"Web" : "[\"Web\"]",
-		"ClienteID" : "3",
+		"clienteID" : "3",
 		"Roles" : "{user}",
 		"IsActive" : true
 	},
 	{
-		"ID" : "cb196d44-c461-4120-bc1f-5e41ff18801e",
+		"ID" : "4",
 		"Email" : "angela@gmail.com",
 		"FullName" : "angela",
 		"Password" : "fN6UhBQRithZW5S",
 		"Web" : "[\"Web\"]",
-		"ClienteID" : "4",
+		"clienteID" : "4",
 		"Roles" : "{user}",
 		"IsActive" : true
 	},
 	{
-		"ID" : "56736c52-9bf5-4ff1-ae9e-1b0225955197",
+		"ID" : "5",
 		"Email" : "pedro@gmail.com",
 		"FullName" : "pedro",
 		"Password" : "fN6UhBQRithZW5S",
 		"Web" : "[\"Web\"]",
-		"ClienteID" : "5",
+		"clienteID" : "5",
 		"Roles" : "{user}",
 		"IsActive" : true
 	}

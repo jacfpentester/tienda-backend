@@ -26,9 +26,9 @@ export class CreateUserDto {
     // @MaxLength(20)
     // Web?: string;
 
-    // @IsString()
-    // @MinLength(1)
-    // FullName:string;
+    @IsString()
+    @MinLength(1)
+    clienteID:string;
 
     // @IsOptional()
     // @IsString()

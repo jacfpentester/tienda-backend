@@ -68,11 +68,9 @@ export class Cliente {
     //Relacion uno a uno al Carrito
     @OneToOne(
         () => Carrito,
-        (carrito) => carrito.cliente,{ 
-            eager:true,
-            onDelete:"CASCADE"    
-        }
+        (carrito) => carrito.cliente,
+        {  onDelete: "CASCADE"  }
     )
-    carrito?: Carrito
+    carrito: Carrito
 
 }

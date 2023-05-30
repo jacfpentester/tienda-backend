@@ -24,7 +24,7 @@ export class ProveedoresController {
 
   @Patch(':id')
   update(@Param('id') id: string, @Body() updateProveedorDto: UpdateProveedorDto) {
-    return this.proveedoresService.update(+id, updateProveedorDto);
+    return this.proveedoresService.update(id, updateProveedorDto);
   }
 
   @Delete(':id')

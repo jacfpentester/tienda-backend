@@ -50,9 +50,9 @@ export class Proveedor {
      //Relacion a productos
      @OneToMany(
         () => Producto,
-        (producto) => producto.proveedores,
+        (productos) => productos.proveedores,
         {cascade: true}
     )
-    producto?: Producto
+    productos?: Producto
 
 }

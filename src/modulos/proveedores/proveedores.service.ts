@@ -56,7 +56,7 @@ export class ProveedoresService {
   findAll() {
     return this.proveedoresRepository.find({
       relations: {
-        producto: true
+        productos: true
       }
     });
   }
@@ -67,13 +67,28 @@ export class ProveedoresService {
         ID
       },
       relations: {
-        producto: true,
+        productos: true,
       }
     });
   }
 
-  update(id: number, updateProveedorDto: UpdateProveedorDto) {
-    return `This action updates a #${id} proveedores`;
+  async update(id: string, updateProveedorDto: UpdateProveedorDto): Promise<Proveedor> {
+    const proveedor = await this.proveedoresRepository.findOneBy({ ID: id });
+
+    if (!proveedor) {
+      // Manejo del error si el proveedor no existe
+      throw new Error('El proveedor no existe');
+    }
+
+    // Actualizar los campos necesarios del proveedor
+    if (updateProveedorDto.Nombre) {
+      proveedor.Nombre = updateProveedorDto.Nombre;
+    }
+
+    // Guardar los cambios
+    const updatedProveedor = await this.proveedoresRepository.save(proveedor);
+
+    return updatedProveedor;
   }
 
   remove(id: number) {

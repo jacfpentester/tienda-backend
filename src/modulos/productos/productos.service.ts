@@ -75,10 +75,33 @@ export class ProductosService {
 
   }
 
-  update(id: number, updateProductoDto: UpdateProductoDto) {
-    return `This action updates a #${id} Productos`;
-  }
+  async update(id: string, updateProductoDto: UpdateProductoDto): Promise<Producto> {
+    const producto = await this.productosRepository.findOneBy({ ID: id });
 
+    if (!producto) {
+      // Manejo del error si esl producto no existe
+      throw new Error('El producto no existe');
+    }
+
+    // Actualizar los campos necesarios de la categoria
+    if (updateProductoDto.Nombre) {
+      producto.Nombre = updateProductoDto.Nombre;
+    }
+    if (updateProductoDto.Descripcion) {
+      producto.Descripcion = updateProductoDto.Descripcion;
+    }
+    if (updateProductoDto.Precio) {
+      producto.Precio = updateProductoDto.Precio;
+    }
+    if (updateProductoDto.Imagen) {
+      producto.Imagen = updateProductoDto.Imagen;
+    }
+
+    // Guardar los cambios
+    const updatedProducto = await this.productosRepository.save(producto);
+
+    return updatedProducto;
+  }
   remove(id: number) {
     return `This action removes a #${id} Productos`;
   }
