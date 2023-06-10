@@ -27,8 +27,9 @@ export class CreateUserDto {
     // Web?: string;
 
     @IsString()
+    @IsOptional()
     @MinLength(1)
-    clienteID:string;
+    clienteID?:string;
 
     // @IsOptional()
     // @IsString()

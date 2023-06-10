@@ -18,9 +18,9 @@ export class User {
     FullName: string;
 
     @Column('text',{
-        nullable: false
+        nullable: true
     })
-    clienteID: string;
+    clienteID?: string;
 
 
     @Column('text', { 
