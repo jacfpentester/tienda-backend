@@ -24,4 +24,17 @@ RUN npm install --force
 
 COPY --chown=node:node ./ .
 
-RUN npm start dev
+RUN npm run build
+ENV NODE_ENV production
+RUN npm config set fetch-retry-mintimeout 60000
+RUN npm install --only=production && npm cache clean --force
+# WORKDIR /app/dist
+# EXPOSE 3005
+
+FROM nginx:1.19.0-alpine as deploy
+COPY --from=install /app/dist/main.js /usr/share/nginx/html/index.js
+COPY --from=install /app/node_modules /usr/share/nginx/html/node_modules
+EXPOSE 80
+# #levantar nginx
+CMD [ "nginx", "-g", "daemon off;" ]
+# ENTRYPOINT ["node", "main.js"]

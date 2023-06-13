@@ -17,7 +17,7 @@ services:
     container_name: apitienda
     image: apitienda
     build:
-      context: .
+      context: ./
       dockerfile: ./Dockerfile
       args:
         - PROYECTO=${PROYECTO}
@@ -30,6 +30,7 @@ services:
     env_file:
        - ./.env
     ports:
-      - ${NEST_PORT}:3000
+      - ${NEST_PORT}:80
     volumes:
-      - .:/app
+      - ./web:/var/www/html
+      - ./logs:/var/logs

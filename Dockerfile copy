@@ -1,4 +1,4 @@
-FROM node:16 as install
+FROM node:17 as install
 LABEL stage=install
 
 ARG PROYECTO
