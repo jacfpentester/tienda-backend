@@ -12,7 +12,7 @@ job('Job-apitienda') {
         githubPush()
     }
     
-    // steps {
-    //     shell("bash ./pCine/build/install.sh")
-    // }
+    steps {
+        shell("bash ./install.sh")
+    }
 }
