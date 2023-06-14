@@ -85,7 +85,7 @@ export class ProveedoresService {
       proveedor.Nombre = updateProveedorDto.Nombre;
     }
 
-    // Guardar los cambiosgfasdfgdsfg
+    // Guardar los cdgsdgambiosgfasdfgdsfg
     const updatedProveedor = await this.proveedoresRepository.save(proveedor);
 
     return updatedProveedor;
