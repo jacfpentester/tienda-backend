@@ -1,18 +1,36 @@
-version: "3.8"
+# version: "3.8"
+# services:
+#   dbtienda:
+#     container_name: bdpostgre
+#     image: postgres:14.3
+#     restart: always
+#     ports:
+#       - ${DB_PORT}:5432
+#     environment:
+#       POSTGRES_PASSWORD: ${DB_PASS}
+#       POSTGRES_DB: ${DB_NAME}
+#       POSTGRES_USER: ${DB_USER}
+#     volumes:
+#       - ./postgres:/var/lib/postgresql/data
+  
+version: '3'
 services:
-  dbtienda:
-    container_name: bdpostgre
+  dbpostgres:
     image: postgres:14.3
     restart: always
     ports:
       - ${DB_PORT}:5432
     environment:
+      POSTGRES_USER: ${DB_USER}
       POSTGRES_PASSWORD: ${DB_PASS}
       POSTGRES_DB: ${DB_NAME}
-      POSTGRES_USER: ${DB_USER}
+    container_name: dbtienda
     volumes:
       - ./postgres:/var/lib/postgresql/data
-  
+    networks: 
+       net_api_tienda:
+           ipv4_address: ${DB_HOST}
+
   webtiendaback:
     container_name: apitienda
     image: apitienda
@@ -32,4 +50,10 @@ services:
     ports:
       - ${NEST_PORT}:3000
     volumes:
-      - .:/app
+      - .:/usr/src/app
+networks: 
+  net_api_tienda:
+    ipam: 
+      driver: default
+      config: 
+        - subnet: ${DB_NETWORK}

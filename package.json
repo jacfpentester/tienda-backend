@@ -81,7 +81,7 @@
     "coverageDirectory": "../coverage",
     "testEnvironment": "node"
   },
-  "gypfile": true,
+  "gypfile": false,
   "main": ".eslintrc.js",
   "directories": {
     "test": "test"
